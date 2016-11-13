@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import {
-//     Responsive,
-//     WidthProvider
-// } from 'react-grid-layout';
+import ReactGridLayout from 'react-grid-layout';
 import NewsCard from 'components/presentational/NewsCard';
 import { CARD_TYPES } from 'constants/cardConstants';
+import { Col, Row } from 'react-bootstrap';
 
 // Actions
 import {
@@ -33,18 +31,24 @@ class NewsOverviewDeck extends Component {
 
     render() {
         const { sources } = this.props;
-
         const cards = sources.map((source, key) => {
             return (
+                <Col className="newsProviderCol" key={key} xs={12} md={3}>
                 <NewsCard
                     key={key}
                     source={source}
                     cardType={CARD_TYPES.OVERVIEW}
-                />);
+                />
+                </Col>
+            );
         });
 
         // This should be replaced so each card has a loading and not the full deck
-        return (<div> {cards.length === 0 ? <span> Loading... </span> : cards} </div>);
+        return (
+            <Row className="show-grid">
+            {cards.length === 0 ? <span> Loading... </span> : cards}
+            </Row>
+        );
     }
 }
 

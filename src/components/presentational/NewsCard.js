@@ -13,7 +13,7 @@ const NewsCard = ({
     switch (cardType) {
         case CARD_TYPES.OVERVIEW:
             cardContent = (
-                <div>
+                <div className="newsProviderLogo">
                     <img onClick={() => hashHistory.push(`/articles/${source.id}`)} src={source.urlsToLogos.small}/>
                 </div>
             );
