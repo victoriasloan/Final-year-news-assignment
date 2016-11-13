@@ -5,7 +5,7 @@ const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt 
         <div>
         <img src={urlToImage}/>
         <h1>{title}</h1>
-        <h1>Written by this cunt - {author}</h1>
+        <h1>Written by this person{author}</h1>
         {description}
         <a href={url}> {url} </a>
         {new Date(publishedAt).toString()}

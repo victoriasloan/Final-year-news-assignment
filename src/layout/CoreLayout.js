@@ -1,11 +1,10 @@
 import React from 'react';
 import NavBar from 'components/presentational/NavBar';
+import 'styles/main.scss';
 
 
 const CoreLayout = ({children}) => {
     return (
-        // Stick navbar in here
-
         <div>
             <NavBar />
 
