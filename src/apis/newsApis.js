@@ -5,12 +5,18 @@ import {
     NEWS_API_KEY
 } from 'constants/apiConstants';
 
-const getNewsStoriesFromSource = (source, sortBy) => $.getJSON(`${NEWS_API_URL}?source=${source}&sortBy=${sortBy}&apiKey=${NEWS_API_KEY}`);
+const getNewsStoriesFromSource = (source) => $.getJSON(`${NEWS_ARTICLES_URL}?source=${source}&apiKey=${NEWS_API_KEY}`);
 
-const getNewsSources = () => $.getJSON(`${NEWS_SOURCES_URL}`);
+const getNewsSourcesFromCategory = (category) => {
+ if (category !== "all") {
+    return $.getJSON(`${NEWS_SOURCES_URL}?category=${category}`);
+ } else {
+     return $.getJSON(`${NEWS_SOURCES_URL}`);
+ }
+};
 
 
 export default {
     getNewsStoriesFromSource,
-    getNewsSources
-}
+    getNewsSourcesFromCategory
+};

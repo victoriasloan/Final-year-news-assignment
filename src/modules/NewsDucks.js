@@ -2,16 +2,27 @@ import newsApis from 'apis/newsApis';
 
 // Actions
 const GET_NEWS_STORIES = 'newsActions:GET_NEWS_STORIES';
+const GET_NEWS_SOURCES = 'newsActions:GET_NEWS_SOURCES';
 
 const initialState = {
-    newsStories: []
+    newsCards: [],
+    newsSources: []
 };
 
 // Reducers
 const REDUCERS = {
-    [GET_NEWS_STORIES]: (state, action) => ({
+    [GET_NEWS_STORIES]: (state, action) => {
+        return {
+            ...state,
+            newsCards: {
+                ...state.newsCards,
+                [action.stories.source]: action.stories.articles
+            }
+        };
+    },
+    [GET_NEWS_SOURCES]: (state, action) => ({
         ...state,
-        newsStories: action.stories
+        newsSources: action.sources
     })
 };
 
@@ -19,19 +30,33 @@ const REDUCERS = {
 export default function reducer(state = initialState, action = {}) {
     const handler = REDUCERS[action.type];
 
-    return handler ? handler(state, action) : state;
+    return handler
+        ? handler(state, action)
+        : state;
 }
 
 // Action Creators
-// addNewsStory action
-export const getNewsStoriesFromSource = (source, sortBy) => (dispatch) => {
+// Get News Story
+export const getNewsStoriesFromSource = (source) => (dispatch) => {
 
-    newsApis.getNewsStoriesFromSource(source, sortBy)
+    newsApis.getNewsStoriesFromSource(source)
     .done((stories) => {
-        dispatch({type: GET_NEWS_STORIES, stories: stories.articles});
+        dispatch({type: GET_NEWS_STORIES, stories: stories});
     }).fail(() => {
         console.log("error");
-    }).always(function() {
+    }).always(() => {
+        console.log("complete");
+    });
+};
+
+//Get News story from category
+export const getNewsSourcesFromCategory = (category) => (dispatch) => {
+    newsApis.getNewsSourcesFromCategory(category)
+    .done((sources) => {
+        dispatch({type: GET_NEWS_SOURCES, sources: sources.sources});
+    }).fail(() => {
+        console.log("error");
+    }).always(() => {
         console.log("complete");
     });
 };
