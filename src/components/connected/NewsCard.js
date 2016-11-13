@@ -30,7 +30,7 @@ class NewsCard extends Component {
         const {stories} = this.props;
         return (
             <div>
-            <h1> NEWS STORIES PENIS </h1>
+            <h1> NEWS STORIES</h1>
             { stories.map((story, key) => <div key={key}> { story.title } </div>) }
             </div>
         )
