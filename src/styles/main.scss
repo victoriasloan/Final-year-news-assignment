@@ -1,4 +1,8 @@
-@import 'colors';
+@import 'global/colors';
+@import 'global/typography';
+@import 'global/mixins';
+
 @import 'navbar';
-@import 'typography';
+
+
 @import 'newsProvider';

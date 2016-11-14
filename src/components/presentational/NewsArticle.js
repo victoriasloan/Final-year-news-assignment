@@ -3,12 +3,12 @@ import React from 'react';
 const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt }) => {
     return (
         <div>
-        <img src={urlToImage}/>
         <h1>{title}</h1>
+        <img src={urlToImage}/>
         <h1>Written by this person{author}</h1>
-        {description}
+        <h3>{description}</h3>
         <a href={url}> {url} </a>
-        {new Date(publishedAt).toString()}
+        <h3>{new Date(publishedAt).toString()}</h3>
         </div>
     );
 };

@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 // import {
 //     Responsive,
 //     WidthProvider
 // } from 'react-grid-layout';
 import NewsCard from 'components/presentational/NewsCard';
-import { CARD_TYPES } from 'constants/cardConstants';
+import {CARD_TYPES} from 'constants/cardConstants';
+import {Col} from 'react-bootstrap';
 
 // Actions
-import {
-    getNewsStoriesFromSource
-} from 'modules/NewsDucks';
+import {getNewsStoriesFromSource} from 'modules/NewsDucks';
 
-const mapStateToProps = (state, ownProps) => ({stories: state.newsReducer.newsCards[ownProps.params.newsprovider]});
+const mapStateToProps = (state, ownProps) => ({
+    stories: state.newsReducer.newsCards[ownProps.params.newsprovider]
+});
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
     getNewsStoriesFromSource
@@ -26,18 +27,20 @@ class NewsDrilldownDeck extends Component {
     }
 
     componentDidMount() {
-        const { getNewsStoriesFromSource, params } = this.props;
+        const {getNewsStoriesFromSource, params} = this.props;
 
         getNewsStoriesFromSource(params.newsprovider);
     }
 
     render() {
-            return (
-                <NewsCard
-                    cardType={CARD_TYPES.DRILLDOWN}
-                    stories={this.props.stories}
-                />);
+        return (
+            <Col xs={12} md={8}>
+                <NewsCard cardType={CARD_TYPES.DRILLDOWN} stories={this.props.stories}/>
+            </Col>
+        );
+
     };
+
 }
 
 NewsDrilldownDeck.propTypes = {
