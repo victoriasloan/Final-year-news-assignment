@@ -30,9 +30,7 @@ const REDUCERS = {
 export default function reducer(state = initialState, action = {}) {
     const handler = REDUCERS[action.type];
 
-    return handler
-        ? handler(state, action)
-        : state;
+    return handler ? handler(state, action) : state;
 }
 
 // Action Creators

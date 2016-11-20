@@ -10,7 +10,7 @@ const NAV_ITEMS = [
     'Gaming',
     'Music',
     'Sport',
-    'Science & Nature'
+    'Science-and-Nature'
 ];
 
 const NavBar = () => (
@@ -26,7 +26,7 @@ const NavBar = () => (
             <NavItem
             key={index}
             eventKey={index}
-            onClick={() => hashHistory.push(`/${item}`)}>
+            onClick={() => {hashHistory.push(`/${item}`); window.location.reload();}}>
             {item}
             </NavItem>
         );
