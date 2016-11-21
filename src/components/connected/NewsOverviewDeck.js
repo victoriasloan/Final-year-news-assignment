@@ -6,6 +6,7 @@ import NewsCard from 'components/presentational/NewsCard';
 import { CARD_TYPES } from 'constants/cardConstants';
 import { Col, Row } from 'react-bootstrap';
 
+
 // Actions
 import {
     getNewsSourcesFromCategory
@@ -46,7 +47,7 @@ class NewsOverviewDeck extends Component {
         // This should be replaced so each card has a loading and not the full deck
         return (
             <Row className="show-grid">
-            {cards.length === 0 ? <span> Loading... </span> : cards}
+            {cards.length === 0 ? <span> Loading .. </span> : cards}
             </Row>
         );
     }

@@ -32,6 +32,10 @@ module.exports = {
                 test: /\.css$/,
                 // exclude: /node_modules/,
                 loader: 'style!css'
+            },
+            {
+              test: /\.gif$/,
+              loader: 'file'
             }
         ]
     }

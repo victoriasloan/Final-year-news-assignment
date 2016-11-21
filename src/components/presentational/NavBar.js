@@ -15,9 +15,12 @@ const NAV_ITEMS = [
 
 const NavBar = () => (
   <Navbar inverse >
+  <div className="navbar__heading">
+      NEWS
+  </div>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="#">React-Bootstrap</a>
+        <a href="#">All</a>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav>

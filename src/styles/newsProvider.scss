@@ -1,12 +1,43 @@
 .newsProviderCol {
-    margin-top: 100px;
-    height: 250px;
+    height: 500px;
 }
 
-.newsProviderLogo  {
+.newsProvider  {
+  border: solid 2px grey;
+  border-radius: 10px;
   text-align: center;
+  box-shadow: 10px 10px 5px $lightGrey;
+  &__info {
+      padding: 0px 40px 0px 40px;
+      min-height: 300px;
+  }
+  &__name {
+      margin-top: $mediumMargin;
+      margin-bottom: $smallMargin;
+      text-transform: uppercase;
+  }
+  &__description {
+      margin-bottom: $smallMargin;
+  }
+  margin-bottom: $smallMargin;
 }
 
-.newsProviderLogo img:hover {
-    cursor:pointer;
+.newsProvider:hover {
+    cursor: pointer;
+    background-color: $lightestGrey;
+}
+
+.newsProvider__info img {
+    margin-bottom: $smallMargin;
+}
+
+
+/*Tablet upwards */
+@media(min-width: 768px) {
+    .newsProvider {
+        &__info {
+            padding: 0px 5px 0px 5px;
+            min-height: 300px;
+        }
+    }
 }
