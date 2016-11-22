@@ -14,15 +14,16 @@ const NAV_ITEMS = [
 ];
 
 const NavBar = () => (
-  <Navbar inverse >
-  <div className="navbar__heading">
-      NEWS
-  </div>
+  <Navbar>
+  <h1 className="navbar__heading">
+      NewsFlash
+  </h1>
     <Navbar.Header>
       <Navbar.Brand>
         <a href="#">All</a>
       </Navbar.Brand>
     </Navbar.Header>
+
     <Nav>
     {NAV_ITEMS.map((item, index) => {
         return (
