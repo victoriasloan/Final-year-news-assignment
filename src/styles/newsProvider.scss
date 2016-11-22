@@ -3,23 +3,22 @@
 }
 
 .newsProvider  {
-  border: solid 2px grey;
   border-radius: 10px;
   text-align: center;
   box-shadow: 10px 10px 5px $lightGrey;
+  background-color: $white;
+  height: 480px;
   &__info {
       padding: 0px 40px 0px 40px;
-      min-height: 300px;
   }
   &__name {
-      margin-top: $mediumMargin;
-      margin-bottom: $smallMargin;
+      padding-top: $smallMargin;
+      padding-bottom: $smallMargin;
       text-transform: uppercase;
   }
   &__description {
       margin-bottom: $smallMargin;
   }
-  margin-bottom: $smallMargin;
 }
 
 .newsProvider:hover {
@@ -37,7 +36,7 @@
     .newsProvider {
         &__info {
             padding: 0px 5px 0px 5px;
-            min-height: 300px;
+
         }
     }
 }

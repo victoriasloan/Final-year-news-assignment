@@ -2,13 +2,20 @@ import React from 'react';
 
 const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt }) => {
     return (
-        <div>
-        <h1>{title}</h1>
-        <img src={urlToImage}/>
-        <h1>Written by this person{author}</h1>
-        <h3>{description}</h3>
-        <a href={url}> {url} </a>
-        <h3>{new Date(publishedAt).toString()}</h3>
+        <div className="newsArticle">
+            <h1 className="newsArticle__title">{title}</h1>
+            <img className="newsArticle__image" src={urlToImage}/>
+            <p>{new Date(publishedAt).toString()}</p>
+            <h5>Written by: {author}</h5>
+            <p className="newsArticle__description">{description}</p>
+            <div className="newsArticle__more">
+                <div className="btn-primary">
+                <a href={url}> View Article</a>
+                </div>
+                <a className="newsArticle__save">
+                    Save Article
+                </a>
+            </div>
         </div>
     );
 };

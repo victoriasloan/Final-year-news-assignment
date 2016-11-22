@@ -1,0 +1,35 @@
+.newsArticle {
+    border: solid 1px $lightestGrey;
+    margin-bottom: $mediumMargin;
+    box-shadow: 10px 10px 5px $lightGrey;
+    border-radius: 10px;
+    padding: 0px 20px 0px 20px;
+    &__title {
+        margin-top: $mediumMargin;
+        margin-bottom: $mediumMargin;
+    }
+    &__image {
+        margin-bottom: $smallMargin;
+    }
+    &__description {
+        padding-bottom: $mediumMargin;
+        line-height: 1.4;
+        font-size: 20px;
+    }
+    &__more {
+        display: inline-flex;
+    }
+    &__save {
+        margin-top: $smallMargin;
+        margin-left: $mediumMargin;
+        color: $darkTeal;
+    }
+    &__save:hover {
+        color: $lightTeal;
+        cursor: pointer;
+    }
+}
+
+.newsArticle img {
+    width: 100%;
+}

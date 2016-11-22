@@ -1,3 +1,6 @@
+body {
+    background-color: $bodyBackground;
+}
 
 p {
     font-size: 16px;
@@ -5,11 +8,28 @@ p {
 
 a {
     font-size: 20px;
-    color: $lightBlue;
+    color: $white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $white;
 }
 
 h1 {
     font-family: "Bree Serif", sans-serif;
     font-size: 26px;
-    color: $darkGrey;
+    color: $black;
+    text-transform: uppercase;
 }
+
+h4 {
+    font-family: "Montserrat", sans-serif;
+    color: $darkTeal;
+    text-transform: uppercase;
+}
+
+$smallMargin: 20px;
+$mediumMargin: 40px;
+$largeMargin: 80px;

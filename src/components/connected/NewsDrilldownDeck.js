@@ -37,6 +37,7 @@ class NewsDrilldownDeck extends Component {
             <Col xs={12} md={8}>
                 <NewsCard cardType={CARD_TYPES.DRILLDOWN} stories={this.props.stories}/>
             </Col>
+
         );
 
     };
