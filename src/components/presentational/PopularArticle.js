@@ -1,11 +1,11 @@
 import React from 'react';
 
+
 //Presentation News Article Component
-const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt }) => {
+const PopularArticle = ({ author, title, description, url, publishedAt }) => {
     return (
-        <div className="newsArticle">
+        <div className="popularArticle">
             <h1 className="newsArticle__title">{title}</h1>
-            <img className="newsArticle__image" src={urlToImage}/>
             <p>{new Date(publishedAt).toString()}</p>
             <h5>Written by: {author}</h5>
             <p className="newsArticle__description">{description}</p>
@@ -22,7 +22,7 @@ const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt 
 };
 
 //News Article Props Validation
-NewsArticle.propTypes = {
+PopularArticle.propTypes = {
     author: React.PropTypes.string,
     title: React.PropTypes.string,
     description: React.PropTypes.string,
@@ -31,4 +31,4 @@ NewsArticle.propTypes = {
     publishedAt: React.PropTypes.string
 };
 
-export default NewsArticle;
+export default PopularArticle;

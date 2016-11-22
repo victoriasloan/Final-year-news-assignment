@@ -28,6 +28,11 @@
         color: $lightTeal;
         cursor: pointer;
     }
+    &__Section {
+        padding: 20px;
+        border-bottom: solid 3px black;
+        border-top: solid 3px black;
+    }
 }
 
 .newsArticle img {

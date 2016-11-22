@@ -34,9 +34,18 @@ class NewsDrilldownDeck extends Component {
 
     render() {
         return (
+            <div>
+
             <Col xs={12} md={8}>
+            <h1 className="newsArticle__Section">Featured Articles</h1>
                 <NewsCard cardType={CARD_TYPES.DRILLDOWN} stories={this.props.stories}/>
             </Col>
+
+            <Col xs={12} md={4}>
+                <h1 className="newsArticle__Section">Popular Articles</h1>
+            <NewsCard cardType={CARD_TYPES.POPULAR} stories={this.props.stories}/>
+            </Col>
+            </div>
 
         );
 
