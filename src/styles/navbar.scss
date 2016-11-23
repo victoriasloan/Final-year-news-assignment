@@ -1,4 +1,8 @@
 .navbar {
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    padding-top: 10px;
+    padding-bottom: 10px;
     &__heading {
         color: $black;
         font-size: 64px;
@@ -24,7 +28,6 @@
 .navbar-default
 .navbar-nav>li>a {
     color: $black;
-    margin-bottom: $mediumMargin;
     font-family: "Montserrat", 'sans-serif';
 }
 
@@ -37,7 +40,6 @@
 .navbar-default
 .navbar-brand {
     color: $black;
-    margin-bottom: $mediumMargin;
     font-family: "Montserrat", 'sans-serif';
 }
 
