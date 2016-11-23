@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRater from 'components/connected/StarRater';
 
 //Presentation News Article Component
 const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt }) => {
@@ -17,6 +18,7 @@ const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt 
                     Save Article
                 </a>
             </div>
+            <StarRater/>
         </div>
     );
 };

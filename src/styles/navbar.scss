@@ -1,13 +1,24 @@
-.navbar__heading {
-    text-align: center;
-    color: $black;
-    font-size: 64px;
-    font-family: "Voltaire", 'sans-serif';
-    font-weight: 800;
-}
-
 .navbar {
-    border-bottom: 3px solid black;
+    &__heading {
+        color: $black;
+        font-size: 64px;
+        font-family: "Voltaire", 'sans-serif';
+        font-weight: 800;
+    }
+    &__top {
+        text-align: center;
+    }
+    &__analog {
+        display: none;
+    }
+    &__dateTime {
+        display: inline-flex;
+        margin-top: $smallMargin;
+        font-family: "Bree Serif", 'sans-serif';
+    }
+    &__time {
+        margin-right: $smallMargin;
+    }
 }
 
 .navbar-default
@@ -35,10 +46,10 @@
     border-bottom: 5px solid black;
 }
 
-
-//tablet
-@media (min-width: 768px ) {
-    .navbar {
-        height: 100px;
+/*Tablet upwards */
+@media(min-width: 768px) {
+    .navbar__analog {
+        margin-left: 45%;
+        display: block;
     }
 }

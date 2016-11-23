@@ -33,6 +33,14 @@
         border-bottom: solid 3px black;
         border-top: solid 3px black;
     }
+    &__starRater {
+        margin-bottom: $largeMargin;
+        &--statement {
+            font-size: 22px;
+            font-family: 'Montserrat', sans-serif;
+            margin-left: $smallMargin;
+        }
+    }
 }
 
 .newsArticle img {
