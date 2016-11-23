@@ -3633,6 +3633,10 @@ react-draggable@^2.1.0, react-draggable@^2.1.1:
   dependencies:
     classnames "^2.2.5"
 
+react-geolocated:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-geolocated/-/react-geolocated-1.0.0.tgz#e63c21a0faa13e5f398a44d6faf71896987f5601"
+
 react-grid-layout:
   version "0.13.9"
   resolved "https://registry.yarnpkg.com/react-grid-layout/-/react-grid-layout-0.13.9.tgz#5ba29cdc0e6422362f46d9a49047ebb24e0e293e"

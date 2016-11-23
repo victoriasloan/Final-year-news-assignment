@@ -19,6 +19,7 @@
     "react-bootstrap": "^0.30.6",
     "react-clock": "^1.0.5",
     "react-dom": "^15.3.2",
+    "react-geolocated": "^1.0.0",
     "react-grid-layout": "^0.13.9",
     "react-joyride": "^1.5.1",
     "react-rater": "^0.3.5",

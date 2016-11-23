@@ -32,7 +32,6 @@ const NavBar = () => (
             <p className="navbar__time"><Clock/></p>
             <p><Time value={todaysDate} format="DD/MM/YYYY"/></p>
         </div>
-
     </div>
 
   <Navbar>

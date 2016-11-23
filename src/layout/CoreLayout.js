@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from 'components/presentational/NavBar';
+import Footer from 'components/presentational/Footer';
 import 'styles/main.scss';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
@@ -13,6 +14,7 @@ const CoreLayout = ({children}) => {
             <div className="container">
                 {children}
             </div>
+            <Footer />
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import StarRater from 'components/connected/StarRater';
 
+
 //Presentation News Article Component
 const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt }) => {
     return (
@@ -19,6 +20,7 @@ const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt 
                 </a>
             </div>
             <StarRater/>
+
         </div>
     );
 };

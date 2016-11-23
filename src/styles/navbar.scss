@@ -50,8 +50,10 @@
 
 /*Tablet upwards */
 @media(min-width: 768px) {
-    .navbar__analog {
-        margin-left: 45%;
-        display: block;
+    .navbar{
+        &__analog {
+            margin-left: 45%;
+            display: block;
+        }
     }
 }
