@@ -3,10 +3,12 @@ import newsApis from 'apis/newsApis';
 // Actions
 const GET_NEWS_STORIES = 'newsActions:GET_NEWS_STORIES';
 const GET_NEWS_SOURCES = 'newsActions:GET_NEWS_SOURCES';
+const SAVE_ARTICLE = 'newsActions:SAVE_ARTICLE';
 
 const initialState = {
     newsCards: [],
-    newsSources: []
+    newsSources: [],
+    savedArticles: []
 };
 
 // Reducers
@@ -23,6 +25,10 @@ const REDUCERS = {
     [GET_NEWS_SOURCES]: (state, action) => ({
         ...state,
         newsSources: action.sources
+    }),
+    [SAVE_ARTICLE]: (state, action) => ({
+        ...state,
+        savedArticles: state.savedArticles.concat(action.article)
     })
 };
 
@@ -59,12 +65,7 @@ export const getNewsSourcesFromCategory = (category) => (dispatch) => {
     });
 };
 
-// This is the equivalent of the above arrow function in ES5 syntax
-// export function addNewsStory(story) {
-//     return function(dispatch) {
-//         dispatch({
-//             type: ADD_NEWS_STORY,
-//             story
-//         });
-//     }
-// }
+export const saveArticle = (article) => (dispatch, getState) => {
+    dispatch({ type: SAVE_ARTICLE, article });
+    console.table(getState().newsReducer.savedArticles);
+};

@@ -3,21 +3,24 @@ import StarRater from 'components/connected/StarRater';
 
 
 //Presentation News Article Component
-const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt }) => {
+const NewsArticle = ({ article, saveArticle, saveable = true }) => {
     return (
         <div className="newsArticle">
-            <h1 className="newsArticle__title">{title}</h1>
-            <img className="newsArticle__image" src={urlToImage}/>
-            <p>{new Date(publishedAt).toString()}</p>
-            <h5>Written by: {author}</h5>
-            <p className="newsArticle__description">{description}</p>
+            <h1 className="newsArticle__title">{article.title}</h1>
+            <img className="newsArticle__image" src={article.urlToImage}/>
+            <p>{new Date(article.publishedAt).toString()}</p>
+            <h5>Written by: {article.author}</h5>
+            <p className="newsArticle__description">{article.description}</p>
             <div className="newsArticle__more">
                 <div className="btn-primary">
-                <a href={url}> View Article</a>
+                <a href={article.url}> View Article</a>
                 </div>
-                <a className="newsArticle__save">
-                    Save Article
-                </a>
+                {saveable &&
+                        <a className="newsArticle__save" onClick={() => saveArticle(article)}>
+                            Save Article
+                        </a>
+                }
+
             </div>
             <StarRater/>
 
@@ -27,12 +30,9 @@ const NewsArticle = ({ author, title, description, url, urlToImage, publishedAt 
 
 //News Article Props Validation
 NewsArticle.propTypes = {
-    author: React.PropTypes.string,
-    title: React.PropTypes.string,
-    description: React.PropTypes.string,
-    url: React.PropTypes.string,
-    urlToImage: React.PropTypes.string,
-    publishedAt: React.PropTypes.string
+    article: React.PropTypes.object,
+    saveArticle: React.PropTypes.func,
+    saveable: React.PropTypes.bool
 };
 
 export default NewsArticle;

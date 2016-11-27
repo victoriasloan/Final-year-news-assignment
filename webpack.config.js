@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+
 const srcPath = path.join(__dirname, 'src');
 
 module.exports = {
@@ -32,11 +33,9 @@ module.exports = {
                 test: /\.css$/,
                 // exclude: /node_modules/,
                 loader: 'style!css'
-            },
-            {
-              test: /\.gif$/,
-              loader: 'file'
             }
-        ]
+
+
+         ]
     }
 };

@@ -10,14 +10,18 @@ import {CARD_TYPES} from 'constants/cardConstants';
 import {Col} from 'react-bootstrap';
 
 // Actions
-import {getNewsStoriesFromSource} from 'modules/NewsDucks';
+import {
+    getNewsStoriesFromSource,
+    saveArticle
+} from 'modules/NewsDucks';
 
 const mapStateToProps = (state, ownProps) => ({
     stories: state.newsReducer.newsCards[ownProps.params.newsprovider]
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    getNewsStoriesFromSource
+    getNewsStoriesFromSource,
+    saveArticle
 }, dispatch);
 
 class NewsDrilldownDeck extends Component {
@@ -35,20 +39,24 @@ class NewsDrilldownDeck extends Component {
     render() {
         return (
             <div>
-
             <Col xs={12} md={8}>
-            <h1 className="newsArticle__Section">Featured Articles</h1>
-                <NewsCard cardType={CARD_TYPES.DRILLDOWN} stories={this.props.stories}/>
+                <NewsCard
+                    title={'FEATURED ARTICLES'}
+                    cardType={CARD_TYPES.DRILLDOWN}
+                    stories={this.props.stories ? this.props.stories.slice(0, 5) : []}
+                    saveArticle={this.props.saveArticle}
+                />
             </Col>
-
             <Col xs={12} md={4}>
-                <h1 className="newsArticle__Section">Popular Articles</h1>
-            <NewsCard cardType={CARD_TYPES.POPULAR} stories={this.props.stories}/>
+                <NewsCard
+                    title={'POPULAR ARTICLES'}
+                    cardType={CARD_TYPES.DRILLDOWN}
+                    stories={this.props.stories ? this.props.stories.slice(5, 10) : []}
+                    saveArticle={this.props.saveArticle}
+                    />
             </Col>
             </div>
-
         );
-
     };
 
 }
@@ -58,7 +66,8 @@ NewsDrilldownDeck.propTypes = {
     category: React.PropTypes.string,
     deckType: React.PropTypes.string,
     params: React.PropTypes.object,
-    stories: React.PropTypes.array
+    stories: React.PropTypes.array,
+    saveArticle: React.PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsDrilldownDeck);
