@@ -68,4 +68,5 @@ export const getNewsSourcesFromCategory = (category) => (dispatch) => {
 export const saveArticle = (article) => (dispatch, getState) => {
     dispatch({ type: SAVE_ARTICLE, article });
     console.table(getState().newsReducer.savedArticles);
+    alert('You saved this article!');
 };
