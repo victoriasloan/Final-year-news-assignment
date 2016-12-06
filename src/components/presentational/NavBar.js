@@ -55,7 +55,6 @@ class NavBar extends Component {
                         return (
                             <h4
                                 key={index}
-                                eventKey={index}
                                 onClick={() => {
                                     hashHistory.push(`/${category}`);
                                     this.props.getNewsSourcesFromCategory(category);
@@ -72,29 +71,17 @@ class NavBar extends Component {
                           <li role="presentation"><a role="menuitem" href="#">Start Tour</a></li>
                         </ul>
                     </div>
-
-
                 </div>
-
-
             </div>
-
-
-
-
-
-
-                <div className="navbar__top">
-                    <h1 className="navbar__heading">
-                        NewsFlash
-                    </h1>
-                    <div className="navbar__analog">
-                        <AnalogClock theme={Themes.dark} width={150}/>
-                    </div>
-
+            <div className="navbar__top">
+                <h1 className="navbar__heading">
+                    NewsFlash
+                </h1>
+                <div className="navbar__analog">
+                    <AnalogClock theme={Themes.dark} width={150}/>
                 </div>
-
-                <Navbar collapseOnSelect>
+             </div>
+             <Navbar collapseOnSelect>
                     <Navbar.Toggle/>
                     <Navbar.Collapse>
                         <Nav>
@@ -115,9 +102,6 @@ class NavBar extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-
-
-
             </div>
         );
     }

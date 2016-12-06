@@ -1,27 +1,26 @@
 import newsApis from 'apis/newsApis';
 
+
 // Actions
 const GET_NEWS_STORIES = 'newsActions:GET_NEWS_STORIES';
 const GET_NEWS_SOURCES = 'newsActions:GET_NEWS_SOURCES';
 const SAVE_ARTICLE = 'newsActions:SAVE_ARTICLE';
+const UPDATE_SEARCH_BAR = 'newsActions:UPDATE_SEARCH_BAR';
+
 
 const initialState = {
-    newsCards: [],
+    articlesForCurrentSource: [],
     newsSources: [],
-    savedArticles: []
+    savedArticles: [],
+    searchTerm: ""
 };
 
 // Reducers
 const REDUCERS = {
-    [GET_NEWS_STORIES]: (state, action) => {
-        return {
-            ...state,
-            newsCards: {
-                ...state.newsCards,
-                [action.stories.source]: action.stories.articles
-            }
-        };
-    },
+    [GET_NEWS_STORIES]: (state, action) => ({
+        ...state,
+        articlesForCurrentSource: action.stories.articles
+    }),
     [GET_NEWS_SOURCES]: (state, action) => ({
         ...state,
         newsSources: action.sources
@@ -29,6 +28,10 @@ const REDUCERS = {
     [SAVE_ARTICLE]: (state, action) => ({
         ...state,
         savedArticles: state.savedArticles.concat(action.article)
+    }),
+    [UPDATE_SEARCH_BAR] : (state, action) => ({
+        ...state,
+        searchTerm: action.searchTerm
     })
 };
 
@@ -53,7 +56,7 @@ export const getNewsStoriesFromSource = (source) => (dispatch) => {
     });
 };
 
-//Get News story from category
+// Get News story from category
 export const getNewsSourcesFromCategory = (category) => (dispatch) => {
     newsApis.getNewsSourcesFromCategory(category)
     .done((sources) => {
@@ -65,8 +68,14 @@ export const getNewsSourcesFromCategory = (category) => (dispatch) => {
     });
 };
 
+// Save article function
 export const saveArticle = (article) => (dispatch, getState) => {
     dispatch({ type: SAVE_ARTICLE, article });
     console.table(getState().newsReducer.savedArticles);
     alert('You saved this article!');
+};
+
+// Create Search
+export const createSearch = (searchTerm) => (dispatch) => {
+    dispatch({ type: UPDATE_SEARCH_BAR, searchTerm });
 };

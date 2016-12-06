@@ -1,31 +1,34 @@
-import React from 'react';
-
-const Search = ({  inputValue, errorMessage, onChange }) => {
-    return (
-        <div>
-        <div className="search__heading">HEADING</div>
-
-          <input
-            type="text"
-            defaultValue={inputValue}
-            onChange= {(this.textInput.value)}
-          />
-          <div className="search__errorMessage">{errorMessage}</div>
-          </div>
-
-    );
+import React, { PropTypes, Component } from 'react';
 
 
-};
+class Search extends Component {
+
+    static propTypes = {
+        searchbarTitle: PropTypes.string,
+        inputValue: PropTypes.string,
+        errorMessage: PropTypes.string,
+        createSearch: PropTypes.func
+    };
 
 
+    render() {
+        const { searchbarTitle = "Search Bar Title", inputValue, errorMessage, createSearch } = this.props;
 
-Search.propTypes = {
+        return (
+            <div>
+                <div className="search__heading">{searchbarTitle}</div>
+                    <input
+                    type="text"
+                    defaultValue={inputValue}
+                    ref={(node) => { this.textInput = node; }}
+                    onChange={() => createSearch(this.textInput.value)}
+                    />
+                <div className="search__errorMessage">{errorMessage}</div>
+             </div>
 
-    inputValue: React.PropTypes.string,
-    errorMessage: React.PropTypes.string,
-    onChange: React.PropTypes.func
+        );
+    }
 
-};
+}
 
 export default Search;

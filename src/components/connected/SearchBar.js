@@ -1,8 +1,9 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // Actions
-import * as actionCreators from './NewsDucks';
+import * as actionCreators from 'modules/NewsDucks';
 
 // Components
 import Search from 'components/presentational/Search';
@@ -10,8 +11,18 @@ import Search from 'components/presentational/Search';
 const mapDispatchToProps = (dispatch) => bindActionCreators(actionCreators, dispatch);
 
 const mapStateToProps = (state) => ({
-  inputValue: state.search.inputValue,
-  errorMessage: state.search.errorMessage
+        searchTerm: state.newsReducer.searchTerm,
+        errorMessage: state.newsReducer.errorMessage,
+        searchbarTitle: state.newsReducer.searchbarTitle
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+const SearchBar = (props) => <Search { ...props} />;
+
+SearchBar.propTypes = {
+    searchbarTitle: React.PropTypes.string,
+    searchTerm: React.PropTypes.string,
+    errorMessage: React.PropTypes.string,
+    createSearch: React.PropTypes.func.isRequired
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

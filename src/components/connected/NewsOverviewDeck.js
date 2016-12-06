@@ -4,8 +4,17 @@ import { connect } from 'react-redux';
 import ReactGridLayout from 'react-grid-layout';
 import NewsCard from 'components/presentational/NewsCard';
 import { CARD_TYPES } from 'constants/cardConstants';
-import { Col, Row } from 'react-bootstrap';
-import R from 'ramda';
+import {
+    Col,
+    Row
+} from 'react-bootstrap';
+import {
+    byKeyAndSearchTerm
+} from 'utils/utilityFunctions';
+import {
+    filter,
+    uniq
+} from 'ramda';
 
 // Actions
 import {
@@ -13,9 +22,11 @@ import {
 } from 'modules/NewsDucks';
 
 const mapStateToProps = (state) => {
+    const { searchTerm, newsSources } = state.newsReducer;
+
     return {
-        sources: state.newsReducer.newsSources,
-        savedStories: R.uniq(state.newsReducer.savedArticles)
+        sources: filter(byKeyAndSearchTerm('name', searchTerm), newsSources),
+        savedStories: uniq(state.newsReducer.savedArticles)
     };
 };
 
@@ -53,7 +64,7 @@ class NewsOverviewDeck extends Component {
             // This should be replaced so each card has a loading and not the full deck
             return (
                 <Row className="show-grid">
-                {cards.length === 0 ? <span> Loading .. </span> : cards}
+                {cards.length === 0 ? <span> No Stories available. </span> : cards}
                 </Row>
             );
         }
