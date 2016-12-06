@@ -27,12 +27,13 @@
     }
     &__firstNav {
         display: inline-flex;
-        float: right;
         margin-right: $smallMargin;
     }
     &__info {
         background-color: black;
         width: 100%;
+        height: 100px;
+        text-align: center;
         &:hover {
             cursor: pointer;
         }
@@ -79,5 +80,15 @@ ul {
             display: block;
             margin-bottom: $mediumMargin;
         }
+        &__info {
+            height: 50px;
+        }
+        &__firstNav {
+            float: right;
+        }
+        &__dateTime {
+            float: left;
+        }
+
     }
 }
