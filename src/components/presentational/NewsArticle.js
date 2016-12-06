@@ -12,9 +12,7 @@ const NewsArticle = ({ article, saveArticle, saveable = true }) => {
             <h5>Written by: {article.author}</h5>
             <p className="newsArticle__description">{article.description}</p>
             <div className="newsArticle__more">
-                <div className="btn-primary">
-                <a href={article.url}> View Article</a>
-                </div>
+                <a href={article.url} className="btn-primary"> View Article</a>
                 {saveable &&
                         <a className="newsArticle__save" onClick={() => saveArticle(article)}>
                             Save Article
