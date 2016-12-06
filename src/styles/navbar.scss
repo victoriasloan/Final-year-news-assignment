@@ -17,13 +17,36 @@
     }
     &__dateTime {
         display: inline-flex;
-        margin-top: $smallMargin;
         font-family: "Bree Serif", 'sans-serif';
+    }
+    &__dateTime h4 {
+        color: $lightGrey;
     }
     &__time {
         margin-right: $smallMargin;
     }
+    &__firstNav {
+        display: inline-flex;
+        float: right;
+        margin-right: $smallMargin;
+    }
+    &__info {
+        background-color: black;
+        width: 100%;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__info h4 {
+        margin-left: $smallMargin;
+        &:hover {
+            color: $lightestGrey;
+            transition: 0.5s;
+        }
+    }
 }
+
+
 
 .navbar-default
 .navbar-nav>li>a {
@@ -43,10 +66,10 @@
     font-family: "Montserrat", 'sans-serif';
 }
 
-.navbar-brand:hover {
-    color: $lightTeal;
-    border-bottom: 5px solid black;
+ul {
+    width: 1200px;
 }
+
 
 /*Tablet upwards */
 @media(min-width: 768px) {
@@ -54,6 +77,7 @@
         &__analog {
             margin-left: 45%;
             display: block;
+            margin-bottom: $mediumMargin;
         }
     }
 }

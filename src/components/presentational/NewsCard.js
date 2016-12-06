@@ -39,7 +39,7 @@ const NewsCard = ({
         case CARD_TYPES.SAVED:
         cardContent =
             <div>
-                <h1 className="savedArticle__section"> SAVED ARTICLES </h1>
+                <h1 className="savedArticle__section">SAVED ARTICLES</h1>
                 {stories.length > 0 ?
                     stories.map((story, index) => <NewsArticle key={index} article={story} saveable={false}/>)
                     : <div> No articles saved. </div>
