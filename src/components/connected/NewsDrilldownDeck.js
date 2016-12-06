@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import Search from 'components/connected/SearchBar';
 // import {
 //     Responsive,
 //     WidthProvider
@@ -52,6 +53,7 @@ class NewsDrilldownDeck extends Component {
 
         return (
             <div>
+            <Search />
             <Col xs={12} md={8}>
                 <NewsCard
                     title={'FEATURED ARTICLES'}

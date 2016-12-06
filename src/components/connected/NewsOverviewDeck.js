@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ReactGridLayout from 'react-grid-layout';
+import Search from 'components/connected/SearchBar';
 import NewsCard from 'components/presentational/NewsCard';
 import { CARD_TYPES } from 'constants/cardConstants';
 import {
@@ -51,6 +52,8 @@ class NewsOverviewDeck extends Component {
             const { sources } = this.props;
             const cards = sources.map((source, key) => {
                 return (
+                    <div key={key}>
+                    <Search />
                     <Col className="newsProviderCol" key={key} xs={12} md={3}>
                     <NewsCard
                         key={key}
@@ -58,6 +61,7 @@ class NewsOverviewDeck extends Component {
                         cardType={CARD_TYPES.OVERVIEW}
                     />
                     </Col>
+                    </div>
                 );
             });
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import NavBar from 'components/presentational/NavBar';
-import Search from 'components/connected/SearchBar';
 import 'styles/main.scss';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
@@ -11,8 +10,7 @@ const CoreLayout = ({children}) => {
             <NavBar />
 
 
-            <div className="container">
-                <Search />
+            <div className="container">                
                 {children}
             </div>
         </div>
