@@ -8,10 +8,23 @@
     font-size: 18px;
     text-align: center;
     margin-bottom: $smallMargin;
+    &:hover {
+        background-color: $lightTeal;
+        box-shadow: 3px 3px 3px $lightestGrey;
+    }
 
 }
 
-.btn-primary:hover {
-    background-color: $lightTeal;
-    box-shadow: 3px 3px 3px $lightestGrey;
+
+.btn-tour {
+    background-color: $black;
+    color: $lightTeal;
+    width: 100px;
+    font-size: 18px;
+    margin-right: $mediumMargin;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    &:hover {
+        color: $white;
+    }
 }

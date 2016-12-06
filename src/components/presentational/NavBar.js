@@ -21,8 +21,7 @@ const NAV_ITEMS = [
 ];
 
 const HELP_ITEMS = [
-    'Saved',
-    'Information'
+    'Saved'
 ];
 
 // const NAV_ITEMS = {
@@ -61,13 +60,30 @@ class NavBar extends Component {
                                     hashHistory.push(`/${category}`);
                                     this.props.getNewsSourcesFromCategory(category);
                                 }}>
-                                {"| "   + category +   "   |"} 
+                                {"| "   + category +   "   |"}
                             </h4>
                         );
                         })
                     }
+                    <div className="dropdown">
+                        <button className="btn dropdown-toggle btn-tour" type="button" id="tour_dropdown" data-toggle="dropdown">Website Tour
+                        <span className="caret"></span></button>
+                        <ul className="dropdown-menu" role="menu">
+                          <li role="presentation"><a role="menuitem" href="#">Start Tour</a></li>
+                        </ul>
+                    </div>
+
+
                 </div>
+
+
             </div>
+
+
+
+
+
+
                 <div className="navbar__top">
                     <h1 className="navbar__heading">
                         NewsFlash
