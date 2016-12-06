@@ -1,6 +1,6 @@
 .navbar {
-    border-top: solid 2px black;
-    border-bottom: solid 2px black;
+    border-top: solid 4px $lightTeal;
+    border-bottom: solid 4px $lightTeal;
     padding-top: 10px;
     padding-bottom: 10px;
     &__heading {
@@ -17,10 +17,10 @@
     }
     &__dateTime {
         display: inline-flex;
-        font-family: "Bree Serif", 'sans-serif';
     }
     &__dateTime h4 {
         color: $lightGrey;
+        font-family: "Raleway", sans-serif;
     }
     &__time {
         margin-right: $smallMargin;
@@ -52,7 +52,10 @@
 .navbar-default
 .navbar-nav>li>a {
     color: $black;
-    font-family: "Montserrat", 'sans-serif';
+    font-family: "Voltaire", 'sans-serif';
+    font-size: 30px;
+
+
 }
 
 .navbar-default
@@ -61,15 +64,10 @@
     border-bottom: 5px solid black;
 }
 
-.navbar-default
-.navbar-brand {
-    color: $black;
-    font-family: "Montserrat", 'sans-serif';
-}
-
 ul {
     width: 1200px;
 }
+
 
 
 /*Tablet upwards */
