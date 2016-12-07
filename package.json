@@ -45,6 +45,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.6.0",
     "lodash": "^4.17.2",
+    "react-tooltip-component": "^0.3.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",

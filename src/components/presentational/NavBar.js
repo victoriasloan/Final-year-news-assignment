@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getNewsSourcesFromCategory} from 'modules/NewsDucks';
 
-
+//Nav items to be used in navigation
 const NAV_ITEMS = [
     'all',
     'Business',
@@ -21,16 +21,19 @@ const NAV_ITEMS = [
     'Science-and-Nature'
 ];
 
+//Saved items in different nav bar
 const SAVED_ITEMS = [
     'Saved'
 ];
 
+//Todays date
 let todaysDate = new Date();
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
     getNewsSourcesFromCategory
 }, dispatch);
 
+//Nav bar component used to select different categories
 class NavBar extends Component {
     render() {
         return (
@@ -41,6 +44,7 @@ class NavBar extends Component {
                     <h4><Time value={todaysDate} format="DD/MM/YYYY"/></h4>
                 </div>
                 <div className="navbar__firstNav">
+                {/* Map over the Saved items */}
                     {SAVED_ITEMS.map((category, index) => {
                         return (
                             <h4
@@ -63,6 +67,7 @@ class NavBar extends Component {
                     </div>
                 </div>
             </div>
+            {/* Navbar section containing the main heading and analog clock */}
             <div className="navbar__top">
                 <h1 className="navbar__heading">
                     NewsFlash
@@ -71,10 +76,12 @@ class NavBar extends Component {
                     <AnalogClock theme={Themes.dark} width={150}/>
                 </div>
              </div>
+             {/*  Collapsable nav bar using React bootstrap to wrap it into a small React Component*/}
              <Navbar collapseOnSelect>
                     <Navbar.Toggle/>
                     <Navbar.Collapse>
                         <Nav className="nav__links">
+                         {/* Map over the Nav_ITEMS and use react router to handle the changing content */}
                             {NAV_ITEMS.map((category, index) => {
                                 return (
                                     <NavItem
@@ -82,6 +89,7 @@ class NavBar extends Component {
                                         eventKey={index}
                                         onClick={() => {
                                             hashHistory.push(`/${category}`);
+                                            // get news sources from category and use as props
                                             this.props.getNewsSourcesFromCategory(category);
                                         }}>
                                         {category}
@@ -97,8 +105,10 @@ class NavBar extends Component {
     }
 }
 
+// Navbar props validation
 NavBar.propTypes = {
     getNewsSourcesFromCategory: React.PropTypes.func
 };
 
+// connect the NavBar to state
 export default connect(null, mapDispatchToProps)(NavBar);
