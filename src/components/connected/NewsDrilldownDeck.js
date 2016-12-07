@@ -56,6 +56,7 @@ class NewsDrilldownDeck extends Component {
             <Search />
             <Col xs={12} md={8}>
                 <NewsCard
+                className="test"
                     title={'FEATURED ARTICLES'}
                     cardType={CARD_TYPES.DRILLDOWN}
                     stories={storiesToShow ? storiesToShow.slice(0, 5) : []}

@@ -6,26 +6,24 @@ class Search extends Component {
     static propTypes = {
         searchbarTitle: PropTypes.string,
         inputValue: PropTypes.string,
-        errorMessage: PropTypes.string,
+        isHidden: PropTypes.bool,
         createSearch: PropTypes.func
     };
 
-
     render() {
-        const { searchbarTitle = "Search Bar Title", inputValue, errorMessage, createSearch } = this.props;
-
+        const { searchbarTitle = "Search", inputValue, createSearch } = this.props;
+        
         return (
-            <div>
+            <div className="searchBar">
                 <div className="search__heading">{searchbarTitle}</div>
                     <input
+                    className="search__input"
                     type="text"
                     defaultValue={inputValue}
                     ref={(node) => { this.textInput = node; }}
                     onChange={() => createSearch(this.textInput.value)}
                     />
-                <div className="search__errorMessage">{errorMessage}</div>
-             </div>
-
+            </div>
         );
     }
 

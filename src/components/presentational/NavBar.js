@@ -8,6 +8,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getNewsSourcesFromCategory} from 'modules/NewsDucks';
 
+
 const NAV_ITEMS = [
     'all',
     'Business',
@@ -20,20 +21,9 @@ const NAV_ITEMS = [
     'Science-and-Nature'
 ];
 
-const HELP_ITEMS = [
+const SAVED_ITEMS = [
     'Saved'
 ];
-
-// const NAV_ITEMS = {
-//     all: 'All',
-//     business: 'Business',
-//     entertainment: 'Entertainment',
-//     general: 'General',
-//     technology: 'Technology',
-//     gaming: 'Gaming',
-//     music: 'Music',
-//     sport: 'Sport',
-// }
 
 let todaysDate = new Date();
 
@@ -51,9 +41,10 @@ class NavBar extends Component {
                     <h4><Time value={todaysDate} format="DD/MM/YYYY"/></h4>
                 </div>
                 <div className="navbar__firstNav">
-                    {HELP_ITEMS.map((category, index) => {
+                    {SAVED_ITEMS.map((category, index) => {
                         return (
                             <h4
+                                className="saved"
                                 key={index}
                                 onClick={() => {
                                     hashHistory.push(`/${category}`);
@@ -65,11 +56,10 @@ class NavBar extends Component {
                         })
                     }
                     <div className="dropdown">
-                        <button className="btn dropdown-toggle btn-tour" type="button" id="tour_dropdown" data-toggle="dropdown">Website Tour
-                        <span className="caret"></span></button>
-                        <ul className="dropdown-menu" role="menu">
-                          <li role="presentation"><a role="menuitem" href="#">Start Tour</a></li>
-                        </ul>
+                        <button className="btn dropdown-toggle btn-tour" type="button" id="tour_dropdown" data-toggle="dropdown">
+                            Website Tour
+                            <span className="caret"></span>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -12,7 +12,6 @@ const mapDispatchToProps = (dispatch) => bindActionCreators(actionCreators, disp
 
 const mapStateToProps = (state) => ({
         searchTerm: state.newsReducer.searchTerm,
-        errorMessage: state.newsReducer.errorMessage,
         searchbarTitle: state.newsReducer.searchbarTitle
 });
 
@@ -21,7 +20,6 @@ const SearchBar = (props) => <Search { ...props} />;
 SearchBar.propTypes = {
     searchbarTitle: React.PropTypes.string,
     searchTerm: React.PropTypes.string,
-    errorMessage: React.PropTypes.string,
     createSearch: React.PropTypes.func.isRequired
 };
 

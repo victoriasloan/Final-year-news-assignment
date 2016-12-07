@@ -3,14 +3,14 @@ import NavBar from 'components/presentational/NavBar';
 import 'styles/main.scss';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
+import UserExperience from 'components/presentational/UserTour';
 
 const CoreLayout = ({children}) => {
     return (
         <div>
+            <UserExperience/>
             <NavBar />
-
-
-            <div className="container">                
+            <div className="container">
                 {children}
             </div>
         </div>
