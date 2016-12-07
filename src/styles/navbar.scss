@@ -47,15 +47,17 @@
     }
 }
 
-
+.nav {
+    &__links {
+        text-transform: uppercase;
+    }
+}
 
 .navbar-default
 .navbar-nav>li>a {
     color: $black;
     font-family: "Voltaire", 'sans-serif';
-    font-size: 30px;
-
-
+    font-size: 24px;
 }
 
 .navbar-default

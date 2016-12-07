@@ -2,8 +2,21 @@ input {
     height: 35px;
      width: 60%;
      border-radius: 5px;
-     border: solid $grey 2px;
+     border: solid $grey 3px;
      margin-left: $smallMargin;
-     color: $grey;
+     color: $darkGrey;
      margin-bottom: $smallMargin;
+}
+
+.search {
+    &__heading {
+        color: $black;
+        font-family: "Voltaire", 'sans-serif';
+        font-size: 30px;
+        margin-left: $smallMargin;
+    }
+    &__icon {
+        margin-left: 10px;
+        color: $darkGrey;
+    }
 }

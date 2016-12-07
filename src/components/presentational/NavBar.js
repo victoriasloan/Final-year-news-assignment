@@ -74,7 +74,7 @@ class NavBar extends Component {
              <Navbar collapseOnSelect>
                     <Navbar.Toggle/>
                     <Navbar.Collapse>
-                        <Nav>
+                        <Nav className="nav__links">
                             {NAV_ITEMS.map((category, index) => {
                                 return (
                                     <NavItem

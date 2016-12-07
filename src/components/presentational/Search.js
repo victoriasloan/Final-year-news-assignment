@@ -12,10 +12,10 @@ class Search extends Component {
 
     render() {
         const { searchbarTitle = "Search", inputValue, createSearch } = this.props;
-        
+
         return (
             <div className="searchBar">
-                <div className="search__heading">{searchbarTitle}</div>
+                <div className="search__heading">{searchbarTitle} <i className="search__icon fa fa-search" aria-hidden="true"></i></div> 
                     <input
                     className="search__input"
                     type="text"
