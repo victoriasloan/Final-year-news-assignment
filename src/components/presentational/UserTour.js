@@ -5,7 +5,7 @@ class UserExperience extends React.Component {
 
     constructor(props) {
         super(props);
-
+        //UserExperience state
         this.state = {
             joyrideOverlay: true,
             joyrideType: 'continuous',
@@ -48,20 +48,20 @@ class UserExperience extends React.Component {
             }]
         };
     }
-
+    //Component mounts after 1s
     componentDidMount() {
         setTimeout(() => {
             this.setState({ready: true});
         }, 1000);
     }
 
-
+    //Component update state
     componentDidUpdate(prevProps, prevState) {
         if (!prevState.ready && this.state.ready) {
             this.refs.joyride.start();
         }
     }
-
+    //Steps added to joyide
     addSteps(steps) {
         let joyride = this.refs.joyride;
 
@@ -78,18 +78,20 @@ class UserExperience extends React.Component {
             return currentState;
         });
     }
-
+    //Tooltip displaying the data
     addTooltip(data) {
         this.refs.joyride.addTooltip(data);
     }
 
-
+    //Return joyride jsx
     render() {
         return (<Joyride
                 ref='joyride'
                 steps={this.state.steps}
+                //Enables continuous steps
                 type={this.state.joyrideType}
                 locale={{
+                    //Button configuration
                     back: (<span>Back</span>),
                     close: (<span>Close</span>),
                     last: (<span>Last</span>),
@@ -98,9 +100,11 @@ class UserExperience extends React.Component {
                 }}
                 showSkipButton={true}
                 showStepsProgress={true}
+                // overlay
                 showOverlay={this.state.joyrideOverlay}
                 />);
     };
 };
 
+//export the UserExperience
 export default UserExperience;

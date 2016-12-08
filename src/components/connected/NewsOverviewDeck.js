@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import ReactGridLayout from 'react-grid-layout';
 import Search from 'components/connected/SearchBar';
 import NewsCard from 'components/presentational/NewsCard';
 import { CARD_TYPES } from 'constants/cardConstants';

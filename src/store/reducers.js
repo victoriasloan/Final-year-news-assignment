@@ -4,6 +4,7 @@ import {combineReducers} from 'redux';
 import newsReducer from '../modules/NewsDucks';
 
 export const makeRootReducer = (asyncReducers) => {
+    // Combine reducers here to improve performance
     return combineReducers({
         // Add sync reducers here
         newsReducer,
@@ -11,6 +12,8 @@ export const makeRootReducer = (asyncReducers) => {
     });
 };
 
+// export the newsReducer
 export {newsReducer};
 
+// export the default makeRootReducer
 export default makeRootReducer;

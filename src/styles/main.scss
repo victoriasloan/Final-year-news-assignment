@@ -1,3 +1,19 @@
+// All scss files follow the BEM design pattern ( Block element Modifier)
+// e.g of BEM
+// .navbar {
+//      background-color: black;
+//      height: 100px;
+//      &__heading {
+//          color: black;
+//          &--dark {
+//              color: white;
+//          }
+//      }
+// }
+// .navbar is the block
+// &__heading is the element
+// &--is the modifier
+
 // Node module style imports
 @import '~joyride';
 
