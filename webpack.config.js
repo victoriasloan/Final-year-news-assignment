@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+
 const srcPath = path.join(__dirname, 'src');
 
 module.exports = {
@@ -14,7 +15,11 @@ module.exports = {
     },
     resolve: {
         root: srcPath,
-        extensions: ['', '.js']
+        extensions: ['', '.js'],
+        modules: ['node_modules'],
+        alias: {
+            'joyride': path.join(__dirname, 'node_modules/react-joyride/lib/styles/react-joyride.scss')
+        }
     },
     module: { //Module object is configuration for all loaders
         loaders: [ //Array of loaders-- when you build webpack will run all files that are included in the loaders.
@@ -25,9 +30,14 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                exclude: /node_modules/,
+                // exclude: /node_modules/,
                 loader: 'style!css!sass?outputStyle=expanded'
             },
-        ]
+            {
+                test: /\.css$/,
+                // exclude: /node_modules/,
+                loader: 'style!css'
+            }
+         ]
     }
 };

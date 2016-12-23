@@ -1,0 +1,92 @@
+//Styling for navbar
+.navbar {
+    border-top: solid 4px $lightTeal;
+    border-bottom: solid 4px $lightTeal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    &__heading {
+        color: $black;
+        font-size: 64px;
+        font-family: "Voltaire", 'sans-serif';
+        font-weight: 800;
+    }
+    &__top {
+        text-align: center;
+    }
+    &__analog {
+        display: none;
+    }
+    &__dateTime {
+        display: inline-flex;
+    }
+    &__dateTime h4 {
+        color: $lightGrey;
+        font-family: "Raleway", sans-serif;
+    }
+    &__time {
+        margin-right: $smallMargin;
+    }
+    &__firstNav {
+        display: inline-flex;
+        margin-right: $smallMargin;
+    }
+    &__info {
+        background-color: black;
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__info h4 {
+        margin-left: $smallMargin;
+        &:hover {
+            color: $lightestGrey;
+            transition: 0.5s;
+        }
+    }
+}
+
+.nav {
+    &__links {
+        text-transform: uppercase;
+    }
+}
+
+.navbar-default
+.navbar-nav>li>a {
+    color: $black;
+    font-family: "Voltaire", 'sans-serif';
+    font-size: 24px;
+}
+
+.navbar-default
+.navbar-nav>li>a:hover {
+    color: $lightTeal;
+    border-bottom: 5px solid black;
+}
+
+ul {
+    width: 1200px;
+}
+
+/*Tablet upwards */
+@media(min-width: 768px) {
+    .navbar{
+        &__analog {
+            margin-left: 45%;
+            display: block;
+            margin-bottom: $mediumMargin;
+        }
+        &__info {
+            height: 50px;
+        }
+        &__firstNav {
+            float: right;
+        }
+        &__dateTime {
+            float: left;
+        }
+    }
+}

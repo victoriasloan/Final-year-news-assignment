@@ -1,0 +1,38 @@
+// typography styles for app
+body {
+    background-color: $bodyBackground;
+}
+
+p {
+    font-size: 16px;
+}
+
+a {
+    font-size: 20px;
+    color: $white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $white;
+}
+
+h1 {
+    font-family: "Bree Serif", sans-serif;
+    font-size: 26px;
+    color: $black;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: "Raleway", sans-serif;
+    font-weight: black;
+    color: $lightTeal;
+    text-transform: uppercase;
+}
+
+// margin variables
+$smallMargin: 20px;
+$mediumMargin: 40px;
+$largeMargin: 80px;

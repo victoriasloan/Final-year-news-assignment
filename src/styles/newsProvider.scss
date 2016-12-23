@@ -1,0 +1,44 @@
+//Styling for news sources
+.newsProviderCol {
+    height: 500px;
+}
+
+// newsProvider styles
+.newsProvider  {
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 10px 10px 5px $lightGrey;
+  background-color: $white;
+  height: 480px;
+  &__info {
+      padding: 0px 40px 0px 40px;
+  }
+  &__name {
+      padding-top: $smallMargin;
+      padding-bottom: $smallMargin;
+      text-transform: uppercase;
+  }
+  &__description {
+      margin-bottom: $smallMargin;
+  }
+}
+
+.newsProvider:hover {
+    cursor: pointer;
+    background-color: $lightestGrey;
+}
+
+.newsProvider__info img {
+    margin-bottom: $smallMargin;
+}
+
+
+/*Tablet upwards */
+@media(min-width: 768px) {
+    .newsProvider {
+        &__info {
+            padding: 0px 5px 0px 5px;
+
+        }
+    }
+}
